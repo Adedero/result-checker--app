@@ -172,8 +172,10 @@ function findStudent(e) {
             let tbody = document.getElementById('tbody-target');
             if (student) {
                 message('green', 'Record found');
+
+                tbody.scrollIntoView({behavior:"smooth"});
                 
-               tbody.innerHTML = `
+                tbody.innerHTML = `
                     <tr>
                         <td>${student.surname} ${student.firstName}</td>
                         <td class="underline">${student.regNumber}</td>
@@ -193,8 +195,11 @@ function findStudent(e) {
 
                         const warning = document.getElementById("warning");
                         warning.classList.add('show-warning');
+                        warning.scrollIntoView({behavior:"smooth"});
 
                         document.getElementById("confirm-delete").addEventListener('click', ()=>{
+
+                            document.getElementById('section-three').classList.remove('show-result');
                             const indexOfStudent = students.record.indexOf(student);
                             const numberOfElementsToDelete = 1;
                             //Remove the record from the students.record array
@@ -204,11 +209,12 @@ function findStudent(e) {
                             xhrPut.open('PUT', url, true);
                             xhrPut.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
+                                    
                                     message('blue', 'Record deleted.');
+                                    document.getElementById('tbody-target').innerHTML = "";
+                                    document.getElementById('section-three').innerHTML = "";
                                     warning.classList.remove('show-warning');
                                     document.getElementById('search-reg-num').value = "";
-                                    tbody.innerHTML = "";
-
                                     updateNumberOfRecords();
                                 } else {
                                     console.log("Connection error");
@@ -341,6 +347,8 @@ function clearAllRecords(){
     confirmDeleteBtn.addEventListener('click', function(){
         warning.classList.remove('show-warning');
         warningText.innerHTML = "You are about to delete this student's record";
+        document.getElementById('section-three').classList.remove('show-result');
+        document.getElementById('tbody-target').innerHTML = "";
 
         const url = "https://api.jsonbin.io/v3/b/64e27a599d312622a3942cc7";
         const apiKey = "$2b$10$3CDNPj32SsMnLHpq6.ZUf.6.XM8ru37cKr1S1H2HOGzENt3wKSuHq";
