@@ -1,0 +1,55 @@
+[
+    {
+        "surname" : "Cosmos",
+        "firstName" : "Adedero",
+        "regNumber" : "20181123035",
+        "department" : "Computer Science",
+        "courses" : [
+            {
+                "title" : "mth101",
+                "unit" : 4,
+                "score" : 80
+            },
+
+            {
+                "title" : "gst101",
+                "unit" : 3,
+                "score" : 70
+            },
+
+            {
+                "title" : "chm101",
+                "unit" : 4,
+                "score" : 55
+            },
+
+            {
+                "title" : "phy101",
+                "unit" : 4,
+                "score" : 81
+            },
+
+            {
+                "title" : "bio101",
+                "unit" : 3,
+                "score" : 61
+            },
+            {
+                "title" : "gst103",
+                "unit" : 2,
+                "score" : 74
+            },
+            {
+                "title" : "frn101",
+                "unit" : 1,
+                "score" : 80
+            },
+            {
+                "title" : "eng101",
+                "unit" : 1,
+                "score" : 60
+            }
+
+        ]
+    }
+]

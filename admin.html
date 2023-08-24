@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Area</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Madonna University, Okija</h1>
+        <p>2022/2023 Academic Session</p>
+    </header>
+
+    <div class="heading">
+        <h2>Admin Dashboard</h2>
+    </div>
+
+    <main>
+
+        <div class="success" id="success">
+            Record Added!
+        </div>
+
+        <div id="warning" class="warning">
+            <p>You are about to delete this student's record</p>
+            <br>
+            <button id="cancel-delete">Cancel</button>
+            <button id="confirm-delete">Confirm</button>
+        </div>
+
+        <div class="information">
+            <p>Number of records: <span></span></p>
+            <button type="button" id="clear-all-records-btn">Clear all records</button>
+        </div>
+
+        <div class="some-options">
+            <p>ADD STUDENT RECORD</p>
+        </div>
+        
+
+        <div class="section">
+            <label for="number-of-courses">Select number of courses</label>
+            <select name="number of courses" id="number-of-courses">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+
+        <form action="" id="add-student-form" class="add-student-form">
+
+            <div class="form-div">
+                <label for="surname-input">Surname</label>
+                <input type="text" id="surname-input">
+            </div>
+
+            <div class="form-div">
+                <label for="first-name-input">First name</label>
+                <input type="text" id="first-name-input">
+            </div>
+
+            <div class="form-div">
+                <label for="reg-num-input">Registration number</label>
+                <input type="text" id="reg-num-input">
+            </div>
+
+            <div class="form-div">
+                <label for="dept-input">Department</label>
+                <input type="text" id="dept-input">
+            </div>
+
+            <div id="courses-div">
+
+            </div>
+
+            <div class="buttons" id="buttons">
+                <button type="submit" id="add-record-btn">Add Record</button>
+                <button type="button" id ="clear-fields-btn">Clear All Fields</button>
+            </div>
+
+           
+        
+        </form>
+    </main>
+
+    <section class="section-one">
+        <p>FIND STUDENT RECORD</p>
+
+        <form action="" id="find-record">
+            <label for="search-reg-num">Registration Number</label><br>
+            <input type="text" id="search-reg-num" title="Search by registration number">
+            <button type="submit" id="find-student-btn">Find</button>
+        </form>
+    </section>
+
+    <section class="section-two">
+        <div>
+            <br>
+            
+            <table id="table-to-show-result">
+                <h4>Results</h4>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Reg. number</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-target">
+                </tbody>
+              </table>
+        </div>
+    </section>
+
+    <section class="section-three" id="section-three">
+        <div class="header">
+            <h1>Madonna University, Okija</h1>
+            <h3>2022/2023 Academic Session</h3>
+            <h4>Student Result</h4>
+        </div>
+        <div class="main">
+            <div class="student-info">
+                <div class="info">
+                    <p>Surname:</p>
+                    <p class="info-paragraph" id="surname"></p>
+                </div>
+    
+                <div class="info">
+                    <p>First Name:</p>
+                    <p class="info-paragraph" id="first-name"></p>
+                </div>
+    
+                <div class="info">
+                    <p>Registration number:</p>
+                    <p class="info-paragraph" id="reg-num"></p>
+                </div>
+    
+                <div class="info">
+                    <p>Department:</p>
+                    <p class="info-paragraph" id="dept"></p>
+                </div>
+            </div>
+        </div>
+        <div class="section-four">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Units</th>
+                            <th>Score</th>
+                            <th>Grade</th>
+                            <th>Grade Point</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-result">
+    
+                       
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        
+        <div class="down-main">
+            <div class="student-info">
+    
+                <div class="info">
+                    <p>Total Course Units:</p>
+                    <p class="info-paragraph" id="tcu"></p>
+                </div>
+    
+                <div class="info">
+                    <p>Total Grade Points:</p>
+                    <p class="info-paragraph" id="tgp"></p>
+                </div>
+        
+            
+                <div class="info">
+                    <p>GPA:</p>
+                    <p class="info-paragraph" id="gpa"></p>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="footer"><a href="#top">Clear</a>
+            <button id="print">Print Result</button>
+
+            <script>
+                document.querySelector("#print").addEventListener('click', function(){
+                    window.print();
+                });
+            </script>
+        </div>
+
+    </div>
+
+    </section>
+    <script type="module" src="src/student.js"></script>
+    <script type="module" src="src/adminaccess.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

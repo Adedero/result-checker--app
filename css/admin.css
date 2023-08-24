@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --text-color: rgb(27, 27, 61);
+    --primary:  rgb(234, 234, 234);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: rgb(255, 81, 0);
+    }
+    50% {
+        background-color: rgb(255, 213, 0);
+    }
+}
+
+.blinking {
+    animation: blink 1s infinite;
+}
+
+header {
+    width: 100%;
+    background-color: rgb(27, 53, 168);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading {
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100vw;
+}
+
+.information {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.information button {
+    width: 7.5rem;
+    height: 2rem;
+    border: none;
+    background-color:  rgb(233, 44, 14);
+    color: white;
+    font-weight: 600;
+    border-radius: .2rem;
+    transition: .2s;
+}
+
+.information button:hover {
+    background-color: rgb(255, 0, 76);
+}
+
+.information > p {
+    font-weight: bolder;
+    color: rgb(27, 53, 168);
+}
+
+.information > p > span {
+    color: rgb(233, 44, 14);
+    font-size: 1.2rem;
+}
+
+.some-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.some-options > p {
+    font-weight: bolder;
+}
+
+
+
+
+.success {
+    background-color: rgb(11, 173, 111);
+    width: auto;
+    padding: 1rem;
+    border-radius: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: .5s;
+}
+
+.show-success {
+    opacity: 1;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.warning{
+    background-color: rgb(255, 255, 255);
+    width: 25rem;
+    position: absolute;
+    text-align: center;
+    padding: 1rem .5rem;
+    border-radius: .2rem;
+    color: red;
+    font-size: 90%;
+    box-shadow: 0px 0px 10px 5px rgb(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transition: .5s;
+    z-index: -2;
+    opacity: 0;
+}
+
+.show-warning {
+    opacity: 1;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.warning button {
+    width: 5rem;
+    height: 2rem;
+    margin: 0 .2rem;
+    border: none;
+    border-radius: .2rem;
+    color: white;
+    font-weight: bolder;
+    transition: .2s;
+}
+
+#cancel-delete {
+    background-color: rgb(27, 53, 168);;
+}
+
+#cancel-delete:hover {
+    background-color: blue;
+}
+
+#confirm-delete {
+    background-color: rgb(233, 44, 14);
+}
+#confirm-delete:hover {
+    background-color: red;
+}
+
+.section {
+    font-weight: bolder;
+    color: white;
+    background-color: rgb(27, 53, 168);
+    padding: .5rem 0rem;
+}
+
+select {
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: .2rem;
+}
+
+.add-student-form {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 1rem;
+}
+
+.add-student-form > div {
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-student-form > div input {
+    width: 12rem;
+}
+
+#add-student-form #courses-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#add-student-form #courses-div input {
+    height: 1.5rem;
+    width: 8rem;
+}
+
+.buttons {
+    gap: 1rem;
+}
+
+.buttons button[type=button]{
+    background-color: rgb(168, 168, 168);
+    color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: .2rem;
+    width: 8rem;
+    height: 2rem;
+    transition: .2s;
+}
+
+.buttons button[type=button]:hover {
+    background-color: rgb(131, 131, 131);
+}
+
+#add-record-btn{
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    background-color:  rgb(27, 53, 168);
+    color: white;
+    font-weight: 600;
+    border-radius: .2rem;
+    transition: .2s;
+}
+
+#add-record-btn:hover {
+    background-color: blue;
+}
+
+section {
+    padding: 0 1rem;
+}
+
+.section-one > p {
+    font-weight: bolder;
+}
+
+#find-record input {
+    height: 1.5rem;
+}
+
+#find-record button {
+    height: 1.5rem;
+    width: 4rem;
+    color: white;
+    background-color: rgb(27, 53, 168);
+    border: none;
+    border-radius: .1rem;
+    font-weight: bolder;
+    transition:.2s;
+}
+
+#find-record button:hover {
+    background-color: blue;
+}
+
+.section-two {
+    padding-bottom: 2rem;
+}
+
+.section-two > div {
+    overflow-x: auto;
+}
+
+table {
+    width: 50%;
+    border-bottom: 1px solid black;
+}
+
+
+
+th, td {
+    text-align: left;
+    padding-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 10rem;
+    max-width: 15rem;
+    white-space: nowrap;
+}
+
+
+.underline {
+    color: blue;
+}
+
+/*RESULT SECTION*/
+
+.section-three {
+    width: 100vw;
+    height: 100vh;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    display: none;
+}
+
+.section::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #012B39;
+    color: white;
+    white-space: nowrap;
+}
+
+.table-container {
+    overflow: auto;
+}
+
+.section-three table {
+    background: #012B39;
+    border-radius: 0.2rem;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .section-three th {
+    border-bottom: 1px solid #364043;
+    color: #E2B842;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1em 1em;
+    text-align: left;
+}
+
+.show-result {
+    display: block;
+}
+
+
+
+.main {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.student-info {
+    width: 100%;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    border-bottom: 2px solid rgb(93, 93, 93, 0.8);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: .5rem;
+
+}
+
+.info {
+    display: flex;
+    gap: .2rem;
+}
+
+.info-paragraph {
+    font-weight: 600;
+}
+
+
+.section-three td {
+    color: #fff;
+    font-weight: 400;
+    padding: 0.65em 1em;
+}
+
+
+
+.section-three tbody tr {
+    transition: background 0.2s ease;
+}
+
+.section-three tbody tr:hover {
+    background: #014055;
+}
+
+.section-four {
+    margin-top: .2rem;
+}
+
+.down-main {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    gap: .5em;
+    width: 100%;
+    position: relative;
+}
+
+#print {
+    position: absolute;
+    bottom: 2rem;
+    right: 1em;
+    width: 6rem;
+    height: 2rem;
+    background-color: #012B39;
+    color: white;
+    border: none;
+    border-radius: .2rem;
+    transition: .2s;
+}
+
+#print:hover {
+    background-color: #014055;
+}
+
+@media only screen and (max-width: 500px) {
+    header h1 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    header p {
+        font-size: .9rem;
+        text-align: center;
+    }
+
+    .some-options {
+        flex-direction: column;
+    }
+
+    table {
+        width: 100%;
+        font-size: .85rem;
+    }
+
+    #add-student-form{
+        gap: .5rem;
+    }
+
+    #add-student-form > div {
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 1.2rem
+    }
+
+    .header h3 {
+        font-size: 1rem;
+    }
+
+    .header h4 {
+        font-size: .9rem;
+    }
+
+    .student-info {
+        display: flex;
+        flex-direction: column;
+        font-size: .85rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    header h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    header p {
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 1rem
+    }
+
+    .header h3 {
+        font-size: .8rem;
+    }
+
+    .header h4 {
+        font-size: .84rem;
+    }
+}
+
+@media print {
+    .section-one, .section-two, main, header, .heading, .footer {
+        display: none;
+    }
+}

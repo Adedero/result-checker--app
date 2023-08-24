@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --text-color: rgb(27, 27, 61);
+    --primary:  rgb(234, 234, 234);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.form-show {
+    display: flex;
+}
+
+.form-hide {
+    display: none;
+}
+
+main {
+    background-color: rgb(28, 12, 44);
+    color: rgba(255, 0, 234);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+}
+
+.message {
+    background-color: rgb(245, 0, 175);
+    color: white;
+    border-radius: .3rem;
+    padding: .6rem;
+    text-align: center;
+    width: 20rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: .5s ease-out;
+}
+
+.show-message {
+    transform: translate(-50%, -15rem);
+    z-index: 2;
+    opacity: 1;
+}
+
+form {
+    background-color: white;
+    border-radius: .5rem;
+    padding: 2rem 4rem;
+    box-shadow: 0px 0px 10px 5px rgba(255, 0, 234, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+form p {
+    font-size: .8rem;
+    color: rgb(255, 23, 73);
+    cursor: pointer;
+}
+
+form p:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+.password {
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid rgb(255, 0, 234, 0.5);
+    border-radius: 10rem;
+    outline: none;
+    padding: 0 .5rem;
+    font-size: 1rem;
+    color:  rgb(255, 0, 234);
+}
+
+.password:focus {
+    border: 1px solid rgb(255, 0, 234); 
+    box-shadow: 0px 0px 4px 1px rgba(255, 0, 76, 0.2);
+}
+
+form button {
+    width: 100%;
+    height: 2rem;
+    border-radius: 10rem;
+    outline: none;
+    border: none;
+    background-color: rgba(191, 0, 255, 0.9);
+    color: white;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+form button:hover {
+    background-color: rgb(255, 0, 234);
+}
+
+.view-password-div {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.view-password-div label {
+    font-size: .7rem;
+    font-weight: bolder;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(191, 0, 255, 0.5);
+    border-radius: 1rem;
+    width: 2.5rem;
+    height: 1.2rem;
+    position: relative;
+}
+
+input[type=checkbox]::before {
+    content: "";
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: .9rem;
+    background-color: rgba(191, 0, 255);
+    border-radius: 10rem;
+    top: .15rem;
+    left: .15rem;
+    transition: .2s ease-in-out;
+}
+
+input[type=checkbox]:checked {
+    background-color: rgb(255, 0, 234);
+}
+
+input[type=checkbox]:checked:before {
+    background-color: rgb(255, 255, 255);
+    transform: translate(21px);
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Checker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="body-one" id="top">
+        <header>
+            <h1>Madonna University, Okija</h1>
+            <p>2022/2023 Academic Session</p>
+        </header>
+        <section>
+            <div class="slider">
+                <p>
+                    <b>2023/2024 Post UTME form is out</b> .......... <b>You can now generate your school fees remitta at the school cafe</b> .......... 
+                    <b>Student week holds next week</b> ..........
+                    <b>Matriculation to hold on May 24th</b> .......... 
+                </p>
+    
+                <p>
+                    <b>2023/2024 Post UTME form is out</b> .......... <b>You can now generate your school fees remitta at the school cafe</b> .......... 
+                    <b>Student week holds next week</b> ..........
+                    <b>Matriculation to hold on May 24th</b> .......... 
+                </p>
+            </div>
+        </section>
+    
+        <div class="error" id="error">
+            Registration number not found.
+            Please enter a valid registration number.
+        </div>
+        
+        <main>
+            <div class="form-container">
+                <h3>Result Checker</h3>
+    
+                <form action="" class="user-form" id="submit-form">
+                    <div>
+                        <label for="regNumber">Registration Number</label>
+                        <input type="text" id="regNumber" required>
+                    </div>
+                    <button type="submit" id="submit">Submit</button>
+                </form>
+            </div>
+    
+        </main>
+    </div>
+
+    <div class="body-two" id="result-section">
+        <div class="header">
+            <h1>Madonna University, Okija</h1>
+            <h3>2022/2023 Academic Session</h3>
+            <h4>Student Result</h4>
+        </div>
+        <div class="main">
+            <div class="student-info">
+                <div class="info">
+                    <p>Surname:</p>
+                    <p class="info-paragraph" id="surname"></p>
+                </div>
+    
+                <div class="info">
+                    <p>First Name:</p>
+                    <p class="info-paragraph" id="first-name"></p>
+                </div>
+    
+                <div class="info">
+                    <p>Registration number:</p>
+                    <p class="info-paragraph" id="reg-num"></p>
+                </div>
+    
+                <div class="info">
+                    <p>Department:</p>
+                    <p class="info-paragraph" id="dept"></p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Units</th>
+                        <th>Score</th>
+                        <th>Grade</th>
+                        <th>Grade Point</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                   
+                </tbody>
+              </table>
+            </div>
+        
+        <div class="down-main">
+            <div class="student-info">
+    
+                <div class="info">
+                    <p>Total Course Units:</p>
+                    <p class="info-paragraph" id="tcu"></p>
+                </div>
+    
+                <div class="info">
+                    <p>Total Grade Points:</p>
+                    <p class="info-paragraph" id="tgp"></p>
+                </div>
+        
+            
+                <div class="info">
+                    <p>GPA:</p>
+                    <p class="info-paragraph" id="gpa"></p>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="footer">Back to <a href="#top">top</a>
+            <button id="print">Print Result</button>
+        </div>
+
+    </div>
+
+
+    <script type="module" src="src/error.js"></script>
+    <script type="module" src="src/request.js"></script>
+    <script type="module" src="src/main.js"></script>
+
+</body>
+</html>

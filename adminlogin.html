@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <main>
+
+        <div class="message" id="message">
+        </div>
+
+        <form action="" id="returning-admin" class="returning-admin">
+            <div>
+                <label for="password" id="password-status">Enter your password</label>
+                <input type="password" id="password" class="password">
+            </div>
+
+            <div class="view-password-div">
+                <label for="view-password">View password</label>
+                <input type="checkbox" class="view-password">
+            </div>
+            
+            <button type="submit" id="login-btn">Submit</button>
+
+            <p id="change-password-link">Change password</p>
+        </form>
+
+
+        <form action="" id="change-password-form" class="change-password-form form-hide">
+            <div>
+                <label for="old-password">Old password</label>
+                <input type="password" id="old-password" class="password">
+            </div>
+
+            <div>
+                <label for="new-password">New password</label>
+                <input type="password" id="new-password" class="password">
+            </div>
+
+            <div class="view-password-div">
+                <label for="view-password">View password</label>
+                <input type="checkbox" class="view-password">
+            </div>
+
+            <button type="submit" id="change-password-btn">Change password</button>
+
+            <p id="cancel-change-password-link">Cancel</p>
+        </form>
+    </main>
+    <script src="src/adminlogin.js"></script>
+</body>
+</html>
