@@ -347,7 +347,7 @@ function clearAllRecords(){
     confirmDeleteBtn.addEventListener('click', function(){
         warning.classList.remove('show-warning');
         warningText.innerHTML = "You are about to delete this student's record";
-        document.getElementById('section-three').classList.remove('show-result');
+        document.getElementById('section-three').innerHTML = "";
         document.getElementById('tbody-target').innerHTML = "";
 
         const url = "https://api.jsonbin.io/v3/b/64e27a599d312622a3942cc7";
