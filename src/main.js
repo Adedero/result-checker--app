@@ -39,3 +39,14 @@ function openAdmin() {
     window.location.href = "./adminlogin.html";
 }
 
+var overlay = document.getElementById("overlay");
+
+// Function to show the loader
+export function showOverlay() {
+    overlay.style.display = "flex";
+}
+
+// Function to hide the loader
+export function hideOverlay() {
+    overlay.style.display = "none";
+}

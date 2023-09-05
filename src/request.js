@@ -1,4 +1,5 @@
 import { showNoMatchError, noConnectionError } from "./error.js";
+import { showOverlay, hideOverlay} from "./main.js";
 
 /* export async function makeRequest() {
     const regNumInput = document.getElementById('regNumber').value;
@@ -174,6 +175,12 @@ export function makeRequest() {
 
     xhr.setRequestHeader("X-Bin-Private", "true");
     xhr.setRequestHeader("X-Master-Key", apiKey);
+    xhr.onloadstart = function() {
+        showOverlay();
+    };
+    xhr.onloadend = function() {
+        hideOverlay();
+    }
 
     xhr.send();
 

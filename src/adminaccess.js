@@ -1,4 +1,16 @@
 import { createStudentObject } from "./student.js";
+var overlay = document.getElementById("overlay");
+
+// Function to show the loader
+export function showOverlay() {
+    overlay.style.display = "flex";
+}
+
+// Function to hide the loader
+export function hideOverlay() {
+    overlay.style.display = "none";
+}
+
 
 
 
@@ -226,6 +238,12 @@ function findStudent(e) {
                             }
                             xhrPut.setRequestHeader("Content-Type", "application/json");
                             xhrPut.setRequestHeader("X-Master-Key", apiKey);
+                            xhrPut.onloadstart = function() {
+                                showOverlay();
+                            };
+                            xhrPut.onloadend = function() {
+                                hideOverlay();
+                            }
                             xhrPut.send(JSON.stringify(students.record));
 
                             updateNumberOfRecords();
@@ -301,6 +319,12 @@ function findStudent(e) {
     }
     xhrGet.setRequestHeader("X-Bin-Private", "true");
     xhrGet.setRequestHeader("X-Master-Key", apiKey);
+    xhrGet.onloadstart = function() {
+        showOverlay();
+    };
+    xhrGet.onloadend = function() {
+        hideOverlay();
+    }
     xhrGet.send();
 };
 
@@ -387,6 +411,12 @@ function clearAllRecords(){
         }
         xhrGet.setRequestHeader("X-Bin-Private", "true");
         xhrGet.setRequestHeader("X-Master-Key", apiKey);
+        xhrGet.onloadstart = function() {
+            showOverlay();
+        };
+        xhrGet.onloadend = function() {
+            hideOverlay();
+        }
         xhrGet.send();
     });
 }
